@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dsbnrv5r3pq75"]
+
+[ext_resource type="Texture2D" uid="uid://1exmfed438ce" path="res://recursos/PNG/Default/tile_block.png" id="p_block"]
+[ext_resource type="TileSet" uid="uid://bdm4h4e1j5vtf" path="res://recursos/ground_tileset.tres" id="p_tileset"]
+[ext_resource type="PackedScene" path="res://componentes/fragmento.tscn" id="p_frag"]
+[ext_resource type="Script" uid="uid://bp2mbknh6jmqa" path="res://scripts/guarda.gd" id="p_guarda"]
+[ext_resource type="PackedScene" path="res://componentes/hud.tscn" id="p_hud"]
+[ext_resource type="PackedScene" path="res://componentes/inimigo.tscn" id="p_inimigo"]
+[ext_resource type="PackedScene" uid="uid://do0f7o0dkqfya" path="res://componentes/player.tscn" id="p_player"]
+[ext_resource type="PackedScene" path="res://componentes/porta.tscn" id="p_porta"]
+[ext_resource type="PackedScene" path="res://componentes/sensor_chao.tscn" id="p_sensor"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/tile_tree.png" id="deco_pine"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_treeLarge.png" id="deco_treeLarge"]
+[ext_resource type="PackedScene" path="res://componentes/killzone.tscn" id="p_kill"]
+
+[sub_resource type="RectangleShape2D" id="wall"]
+size = Vector2(24, 40)
+
+[node name="Cena08" type="Node2D" unique_id=1761525400]
+script = ExtResource("p_guarda")
+indice = 8
+
+[node name="Chao" type="TileMapLayer" parent="." unique_id=1028261481]
+position = Vector2(-124, 448)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAQAAAAAAAAABAAEAAAAAAAAAAAACAAAAAQAAAAAAAAACAAEAAAAAAAAAAAADAAAAAQAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAAAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAAAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAAAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAAAAAAAAAAALAAAAAQAAAAAAAAALAAEAAAAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAAAAAAAAAAANAAAAAQAAAAAAAAANAAEAAAAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAAAAAAAAAAAPAAAAAQAAAAAAAAAPAAEAAAAAAAAAAAAQAAAAAQAAAAAAAAAQAAEAAAAAAAAAAAARAAAAAQAAAAAAAAARAAEAAAAAAAAAAAASAAAAAQAAAAAAAAASAAEAAAAAAAAAAAATAAAAAQAAAAAAAAATAAEAAAAAAAAAAAAUAAAAAQAAAAAAAAAUAAEAAAAAAAAAAAAVAAAAAQAAAAAAAAAVAAEAAAAAAAAAAAAWAAAAAQAAAAAAAAAWAAEAAAAAAAAAAAAXAAAAAQAAAAAAAAAXAAEAAAAAAAAAAAAYAAAAAQAAAAAAAAAYAAEAAAAAAAAAAAAZAAAAAQAAAAAAAAAZAAEAAAAAAAAAAAAaAAAAAQAAAAAAAAAaAAEAAAAAAAAAAAAbAAAAAQAAAAAAAAAbAAEAAAAAAAAAAAAcAAAAAQAAAAAAAAAcAAEAAAAAAAAAAAAdAAAAAQAAAAAAAAAdAAEAAAAAAAAAAAAeAAAAAQAAAAAAAAAeAAEAAAAAAAAAAAAfAAAAAQAAAAAAAAAfAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("p_tileset")
+
+[node name="NuvemA" type="Sprite2D" parent="."]
+position = Vector2(300, 140)
+z_index = -1
+texture = ExtResource("deco_cloudA")
+
+[node name="NuvemB" type="Sprite2D" parent="."]
+position = Vector2(1100, 220)
+z_index = -1
+texture = ExtResource("deco_cloudB")
+
+[node name="ArvorePinheiro" type="Sprite2D" parent="."]
+position = Vector2(60, 416)
+z_index = -1
+texture = ExtResource("deco_pine")
+
+[node name="ArvoreGrande" type="Sprite2D" parent="."]
+position = Vector2(1850, 384)
+z_index = -1
+texture = ExtResource("deco_treeLarge")
+
+[node name="Player" parent="." unique_id=452824854 instance=ExtResource("p_player")]
+position = Vector2(140, 340)
+
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=453698136]
+position = Vector2(480, 428)
+
+[node name="Sprite2D" type="Sprite2D" parent="WallLeft" unique_id=1709512905]
+scale = Vector2(0.375, 0.625)
+texture = ExtResource("p_block")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=59220936]
+shape = SubResource("wall")
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=292713326]
+position = Vector2(780, 428)
+
+[node name="Sprite2D" type="Sprite2D" parent="WallRight" unique_id=1579894785]
+scale = Vector2(0.375, 0.625)
+texture = ExtResource("p_block")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=125914211]
+shape = SubResource("wall")
+
+[node name="Inimigo" parent="." unique_id=117516134 instance=ExtResource("p_inimigo")]
+position = Vector2(540, 419)
+
+[node name="SensorChao" parent="." unique_id=333291070 instance=ExtResource("p_sensor")]
+position = Vector2(680, 440)
+
+[node name="Porta" parent="." unique_id=2108392961 instance=ExtResource("p_porta")]
+position = Vector2(820, 352)
+
+[node name="Fragmento" parent="." unique_id=551382730 instance=ExtResource("p_frag")]
+position = Vector2(1250, 408)
+indice = 8
+
+[node name="Killzone" parent="." instance=ExtResource("p_kill")]
+position = Vector2(900, 780)
+
+[node name="HUD" parent="." unique_id=1521152493 instance=ExtResource("p_hud")]
+indice = 8
+
+[connection signal="pisado" from="SensorChao" to="Porta" method="abrir"]

@@ -1,0 +1,110 @@
+[gd_scene format=4 uid="uid://cpy46jswab3ys"]
+
+[ext_resource type="Texture2D" uid="uid://cteu44qo3peym" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
+[ext_resource type="Texture2D" uid="uid://dx1framtwspdb" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
+[ext_resource type="Texture2D" uid="uid://weaojmtc28h8" path="res://recursos/PNG/Default/tile_tree.png" id="deco_pine"]
+[ext_resource type="Texture2D" uid="uid://div53livhxx86" path="res://recursos/PNG/Default/background_treeLarge.png" id="deco_tree"]
+[ext_resource type="Texture2D" uid="uid://c8itjhevirq4e" path="res://recursos/PNG/Default/tile_bridge.png" id="p_bridge"]
+[ext_resource type="PackedScene" path="res://componentes/fragmento.tscn" id="p_frag"]
+[ext_resource type="Script" uid="uid://bp2mbknh6jmqa" path="res://scripts/guarda.gd" id="p_guarda"]
+[ext_resource type="PackedScene" path="res://componentes/hud.tscn" id="p_hud"]
+[ext_resource type="PackedScene" path="res://componentes/killzone.tscn" id="p_kill"]
+[ext_resource type="PackedScene" uid="uid://do0f7o0dkqfya" path="res://componentes/player.tscn" id="p_player"]
+[ext_resource type="TileSet" uid="uid://bdm4h4e1j5vtf" path="res://recursos/ground_tileset.tres" id="p_tileset"]
+
+[sub_resource type="RectangleShape2D" id="floor_esq"]
+size = Vector2(500, 128)
+
+[sub_resource type="RectangleShape2D" id="ponte_colisor_errado"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="floor_dir"]
+size = Vector2(700, 128)
+
+[node name="Cena10" type="Node2D" unique_id=369818724]
+script = ExtResource("p_guarda")
+indice = 10
+
+[node name="ChaoEsq" type="StaticBody2D" parent="." unique_id=543181146]
+position = Vector2(250, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoEsq" unique_id=1834430532]
+shape = SubResource("floor_esq")
+
+[node name="ChaoEsqVisual" type="TileMapLayer" parent="." unique_id=1189317651]
+position = Vector2(0, 448)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAQAAAAAAAAABAAEAAAAAAAAAAAACAAAAAQAAAAAAAAACAAEAAAAAAAAAAAADAAAAAQAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("p_tileset")
+collision_enabled = false
+
+[node name="NuvemA" type="Sprite2D" parent="." unique_id=538359085]
+z_index = -1
+position = Vector2(300, 140)
+texture = ExtResource("deco_cloudA")
+
+[node name="NuvemB" type="Sprite2D" parent="." unique_id=624362527]
+z_index = -1
+position = Vector2(1100, 220)
+texture = ExtResource("deco_cloudB")
+
+[node name="Arvore" type="Sprite2D" parent="." unique_id=1770120562]
+z_index = -1
+position = Vector2(60, 384)
+texture = ExtResource("deco_tree")
+
+[node name="ArvorePinheiro" type="Sprite2D" parent="." unique_id=1843837505]
+z_index = -1
+position = Vector2(1800, 416)
+texture = ExtResource("deco_pine")
+
+[node name="PonteQuebrada" type="StaticBody2D" parent="." unique_id=1118510494]
+position = Vector2(725, 480)
+
+[node name="Sprite2D" type="Sprite2D" parent="PonteQuebrada" unique_id=2002510904]
+texture_repeat = 2
+texture = ExtResource("p_bridge")
+region_enabled = true
+region_rect = Rect2(0, 0, 150, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PonteQuebrada" unique_id=720987760]
+position = Vector2(50, -15)
+shape = SubResource("ponte_colisor_errado")
+
+[node name="ConstruaAqui" type="Node2D" parent="." unique_id=29697789]
+position = Vector2(990, 480)
+
+[node name="Dica" type="Label" parent="ConstruaAqui" unique_id=379736169]
+offset_left = -127.0
+offset_top = -60.0
+offset_right = 110.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Construa aqui uma nova cena:
+StaticBody2D + Sprite2D + CollisionShape2D"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ChaoDir" type="StaticBody2D" parent="." unique_id=165939122]
+position = Vector2(1530, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoDir" unique_id=657150073]
+shape = SubResource("floor_dir")
+
+[node name="ChaoDirVisual" type="TileMapLayer" parent="." unique_id=140044777]
+position = Vector2(1180, 448)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAQAAAAAAAAABAAEAAAAAAAAAAAACAAAAAQAAAAAAAAACAAEAAAAAAAAAAAADAAAAAQAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAAAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAAAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAAAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("p_tileset")
+collision_enabled = false
+
+[node name="Player" parent="." unique_id=29008229 instance=ExtResource("p_player")]
+position = Vector2(140, 340)
+
+[node name="Fragmento" parent="." unique_id=1606600055 instance=ExtResource("p_frag")]
+position = Vector2(1650, 408)
+indice = 10
+
+[node name="Killzone" parent="." unique_id=1538560558 instance=ExtResource("p_kill")]
+position = Vector2(900, 780)
+
+[node name="HUD" parent="." unique_id=1583130169 instance=ExtResource("p_hud")]
+indice = 10

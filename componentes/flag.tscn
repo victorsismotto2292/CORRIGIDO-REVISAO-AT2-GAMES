@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://6cxh64drxh8k"]
+
+[ext_resource type="Texture2D" uid="uid://cduupbrfia85g" path="res://recursos/PNG/Default/tile_flag.png" id="1_a26ci"]
+
+[sub_resource type="RectangleShape2D" id="r1"]
+size = Vector2(64, 64)
+
+[node name="Flag" type="Area2D" unique_id=1429925080]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1299887470]
+texture = ExtResource("1_a26ci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1612197667]
+position = Vector2(0, -2)
+shape = SubResource("r1")

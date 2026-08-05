@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://ccgdb5c4j3r8u"]
+
+[ext_resource type="Script" uid="uid://bxir5umebjo8h" path="res://scripts/menu.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="botao_style"]
+bg_color = Color(0.9882353, 0.3607843, 0.3960784, 1)
+
+[sub_resource type="StyleBoxFlat" id="botao_hover_style"]
+bg_color = Color(0.5686275, 0.4745098, 1, 1)
+
+[node name="Menu" type="Control" unique_id=967307485]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=373860620]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=822852348]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -170.0
+offset_right = 260.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+
+[node name="Titulo" type="Label" parent="VBox" unique_id=1680976923]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "TRILHA DE REVISÃO"
+horizontal_alignment = 1
+
+[node name="Instrucoes" type="Label" parent="VBox" unique_id=1231598615]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Resolva o desafio de cada fase para abrir a próxima.
+Chegue ao fim para ganhar o prêmio!
+
+Mover: A/D ou setas    Pular: Espaco"
+horizontal_alignment = 1
+
+[node name="ComecarButton" type="Button" parent="VBox" unique_id=1705149082]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+theme_override_colors/font_pressed_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+theme_override_colors/font_hover_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("botao_style")
+theme_override_styles/pressed = SubResource("botao_style")
+theme_override_styles/hover = SubResource("botao_hover_style")
+text = "Começar"
+
+[node name="SairButton" type="Button" parent="VBox" unique_id=1784171319]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+theme_override_colors/font_pressed_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+theme_override_colors/font_hover_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("botao_style")
+theme_override_styles/pressed = SubResource("botao_style")
+theme_override_styles/hover = SubResource("botao_hover_style")
+text = "Sair"
+
+[connection signal="pressed" from="VBox/ComecarButton" to="." method="_on_comecar_pressed"]
+[connection signal="pressed" from="VBox/SairButton" to="." method="_on_sair_pressed"]

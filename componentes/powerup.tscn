@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dx7i3j4155cl1"]
+
+[ext_resource type="Script" uid="uid://cfifjhx7d5801" path="res://scripts/powerup.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bygcdr0f311fq" path="res://recursos/PNG/Default/tile_key.png" id="2_iw1xx"]
+
+[sub_resource type="CircleShape2D" id="c1"]
+radius = 26.0
+
+[node name="PowerUp" type="Area2D" unique_id=1296399060]
+script = ExtResource("2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1239323960]
+texture = ExtResource("2_iw1xx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=959121517]
+shape = SubResource("c1")

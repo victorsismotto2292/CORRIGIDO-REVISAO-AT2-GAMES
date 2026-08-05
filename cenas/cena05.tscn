@@ -1,0 +1,83 @@
+[gd_scene format=4 uid="uid://bj6e716an5edl"]
+
+[ext_resource type="Texture2D" uid="uid://cteu44qo3peym" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
+[ext_resource type="Texture2D" uid="uid://dx1framtwspdb" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
+[ext_resource type="Texture2D" uid="uid://weaojmtc28h8" path="res://recursos/PNG/Default/tile_tree.png" id="deco_pine"]
+[ext_resource type="Texture2D" uid="uid://b8ennfvngk4dk" path="res://recursos/PNG/Default/background_tree.png" id="deco_tree"]
+[ext_resource type="PackedScene" path="res://componentes/fragmento.tscn" id="p_frag"]
+[ext_resource type="Script" uid="uid://bp2mbknh6jmqa" path="res://scripts/guarda.gd" id="p_guarda"]
+[ext_resource type="PackedScene" path="res://componentes/hud.tscn" id="p_hud"]
+[ext_resource type="PackedScene" path="res://componentes/killzone.tscn" id="p_kill"]
+[ext_resource type="PackedScene" uid="uid://do0f7o0dkqfya" path="res://componentes/player.tscn" id="p_player"]
+[ext_resource type="PackedScene" uid="uid://dx7i3j4155cl1" path="res://componentes/powerup.tscn" id="p_powerup"]
+[ext_resource type="TileSet" uid="uid://bdm4h4e1j5vtf" path="res://recursos/ground_tileset.tres" id="p_tileset"]
+
+[sub_resource type="RectangleShape2D" id="floor_esq"]
+size = Vector2(700, 128)
+
+[sub_resource type="RectangleShape2D" id="floor_dir"]
+size = Vector2(900, 128)
+
+[node name="Cena05" type="Node2D" unique_id=225417925]
+script = ExtResource("p_guarda")
+indice = 5
+
+[node name="ChaoEsq" type="StaticBody2D" parent="." unique_id=1493940455]
+position = Vector2(350, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoEsq" unique_id=375691252]
+shape = SubResource("floor_esq")
+
+[node name="ChaoEsqVisual" type="TileMapLayer" parent="." unique_id=225203017]
+position = Vector2(0, 448)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAQAAAAAAAAABAAEAAAAAAAAAAAACAAAAAQAAAAAAAAACAAEAAAAAAAAAAAADAAAAAQAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAAAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAAAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAAAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("p_tileset")
+collision_enabled = false
+
+[node name="NuvemA" type="Sprite2D" parent="." unique_id=848053691]
+z_index = -1
+position = Vector2(300, 140)
+texture = ExtResource("deco_cloudA")
+
+[node name="NuvemB" type="Sprite2D" parent="." unique_id=1905106554]
+z_index = -1
+position = Vector2(1100, 220)
+texture = ExtResource("deco_cloudB")
+
+[node name="Arvore" type="Sprite2D" parent="." unique_id=2078817798]
+z_index = -1
+position = Vector2(60, 384)
+texture = ExtResource("deco_tree")
+
+[node name="ArvorePinheiro" type="Sprite2D" parent="." unique_id=1033388085]
+z_index = -1
+position = Vector2(1820, 416)
+texture = ExtResource("deco_pine")
+
+[node name="ChaoDir" type="StaticBody2D" parent="." unique_id=997992394]
+position = Vector2(1450, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoDir" unique_id=1247159400]
+shape = SubResource("floor_dir")
+
+[node name="ChaoDirVisual" type="TileMapLayer" parent="." unique_id=1099872979]
+position = Vector2(1000, 448)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAQAAAAAAAAABAAEAAAAAAAAAAAACAAAAAQAAAAAAAAACAAEAAAAAAAAAAAADAAAAAQAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAAAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAAAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAAAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAAAAAAAAAAALAAAAAQAAAAAAAAALAAEAAAAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAAAAAAAAAAANAAAAAQAAAAAAAAANAAEAAAAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("p_tileset")
+collision_enabled = false
+
+[node name="Player" parent="." unique_id=901021699 instance=ExtResource("p_player")]
+position = Vector2(140, 340)
+
+[node name="PowerUp" parent="." unique_id=1640765204 instance=ExtResource("p_powerup")]
+position = Vector2(550, 380)
+
+[node name="Fragmento" parent="." unique_id=191107191 instance=ExtResource("p_frag")]
+position = Vector2(1300, 408)
+indice = 5
+
+[node name="Killzone" parent="." unique_id=105773396 instance=ExtResource("p_kill")]
+position = Vector2(850, 780)
+
+[node name="HUD" parent="." unique_id=90346152 instance=ExtResource("p_hud")]
+indice = 5

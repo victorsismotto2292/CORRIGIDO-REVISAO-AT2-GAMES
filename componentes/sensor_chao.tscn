@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/tile_belt.png" id="1"]
+[ext_resource type="Script" path="res://scripts/sensor_chao.gd" id="2"]
+
+[sub_resource type="RectangleShape2D" id="r1"]
+size = Vector2(80, 20)
+
+[node name="SensorChao" type="Area2D"]
+script = ExtResource("2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+scale = Vector2(1.25, 0.3125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("r1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

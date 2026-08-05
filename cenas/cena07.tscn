@@ -1,0 +1,59 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/guarda.gd" id="1_b4phx"]
+[ext_resource type="TileSet" path="res://recursos/ground_tileset.tres" id="2_pyhqw"]
+[ext_resource type="PackedScene" path="res://componentes/player.tscn" id="3_5qgfh"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="4_b4phx"]
+[ext_resource type="PackedScene" path="res://componentes/fragmento.tscn" id="5_gqdl6"]
+[ext_resource type="Script" path="res://scripts/fragmento.gd" id="6_pyhqw"]
+[ext_resource type="PackedScene" path="res://componentes/hud.tscn" id="7_46762"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="8_5qgfh"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_tree.png" id="deco_tree"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/tile_tree.png" id="deco_pine"]
+[ext_resource type="PackedScene" path="res://componentes/killzone.tscn" id="p_kill"]
+
+[node name="Cena07" type="Node2D" unique_id=36209304]
+script = ExtResource("1_b4phx")
+indice = 7
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=536234616]
+tile_map_data = PackedByteArray("AAAAAAcAAQAAAAAAAAAAAAgAAAAAAAAAAAABAAcAAQAAAAAAAAABAAgAAAAAAAAAAAACAAcAAQAAAAAAAAACAAgAAAAAAAAAAAADAAcAAQAAAAAAAAADAAgAAAAAAAAAAAAEAAcAAQAAAAAAAAAEAAgAAAAAAAAAAAAFAAcAAQAAAAAAAAAFAAgAAAAAAAAAAAAGAAcAAQAAAAAAAAAGAAgAAAAAAAAAAAAHAAcAAQAAAAAAAAAHAAgAAAAAAAAAAAAIAAcAAQAAAAAAAAAIAAgAAAAAAAAAAAAJAAcAAQAAAAAAAAAJAAgAAAAAAAAAAAAKAAcAAQAAAAAAAAAKAAgAAAAAAAAAAAALAAcAAQAAAAAAAAALAAgAAAAAAAAAAAAMAAcAAQAAAAAAAAAMAAgAAAAAAAAAAAANAAcAAQAAAAAAAAANAAgAAAAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAAAAAAAAAAAPAAcAAQAAAAAAAAAPAAgAAAAAAAAAAAAQAAcAAQAAAAAAAAAQAAgAAAAAAAAAAAARAAcAAQAAAAAAAAARAAgAAAAAAAAAAAASAAcAAQAAAAAAAAASAAgAAAAAAAAAAAATAAcAAQAAAAAAAAATAAgAAAAAAAAAAAAUAAcAAQAAAAAAAAAUAAgAAAAAAAAAAAAVAAcAAQAAAAAAAAAVAAgAAAAAAAAAAAAWAAcAAQAAAAAAAAAWAAgAAAAAAAAAAAAXAAcAAQAAAAAAAAAXAAgAAAAAAAAAAAAYAAcAAQAAAAAAAAAYAAgAAAAAAAAAAAAZAAcAAQAAAAAAAAAZAAgAAAAAAAAAAAAUAAMAAQAAAAAAAAAVAAMAAQAAAAAAAAAWAAMAAQAAAAAAAAAXAAMAAQAAAAAAAAAYAAMAAQAAAAAAAAAZAAMAAQAAAAAAAAA=")
+tile_set = ExtResource("2_pyhqw")
+
+[node name="NuvemA" type="Sprite2D" parent="."]
+position = Vector2(300, 140)
+z_index = -1
+texture = ExtResource("deco_cloudA")
+
+[node name="NuvemB" type="Sprite2D" parent="."]
+position = Vector2(1100, 100)
+z_index = -1
+texture = ExtResource("deco_cloudB")
+
+[node name="Arvore" type="Sprite2D" parent="."]
+position = Vector2(60, 384)
+z_index = -1
+texture = ExtResource("deco_tree")
+
+[node name="ArvorePinheiro" type="Sprite2D" parent="."]
+position = Vector2(1550, 416)
+z_index = -1
+texture = ExtResource("deco_pine")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2139442340 groups=["player"] instance=ExtResource("3_5qgfh")]
+position = Vector2(140, 340)
+script = ExtResource("4_b4phx")
+
+[node name="Fragmento" type="Area2D" parent="." unique_id=1965458383 instance=ExtResource("5_gqdl6")]
+position = Vector2(1408, 152)
+script = ExtResource("6_pyhqw")
+indice = 7
+
+[node name="Killzone" parent="." instance=ExtResource("p_kill")]
+position = Vector2(700, 780)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1112095146 instance=ExtResource("7_46762")]
+script = ExtResource("8_5qgfh")
+indice = 7

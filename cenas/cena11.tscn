@@ -1,0 +1,84 @@
+[gd_scene format=4 uid="uid://cyonxqnbicqr1"]
+
+[ext_resource type="Texture2D" uid="uid://cteu44qo3peym" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
+[ext_resource type="Texture2D" uid="uid://dx1framtwspdb" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
+[ext_resource type="Texture2D" uid="uid://weaojmtc28h8" path="res://recursos/PNG/Default/tile_tree.png" id="deco_pine"]
+[ext_resource type="Texture2D" uid="uid://b8ennfvngk4dk" path="res://recursos/PNG/Default/background_tree.png" id="deco_tree"]
+[ext_resource type="PackedScene" path="res://componentes/fragmento.tscn" id="p_frag"]
+[ext_resource type="Script" uid="uid://bp2mbknh6jmqa" path="res://scripts/guarda.gd" id="p_guarda"]
+[ext_resource type="PackedScene" path="res://componentes/hud.tscn" id="p_hud"]
+[ext_resource type="PackedScene" path="res://componentes/hud_pontuacao.tscn" id="p_hud_pontos"]
+[ext_resource type="PackedScene" path="res://componentes/killzone.tscn" id="p_kill"]
+[ext_resource type="PackedScene" path="res://componentes/moeda.tscn" id="p_moeda"]
+[ext_resource type="PackedScene" uid="uid://do0f7o0dkqfya" path="res://componentes/player.tscn" id="p_player"]
+[ext_resource type="PackedScene" path="res://componentes/porta.tscn" id="p_porta"]
+[ext_resource type="TileSet" uid="uid://bdm4h4e1j5vtf" path="res://recursos/ground_tileset.tres" id="p_tileset"]
+[ext_resource type="Script" uid="uid://h33xj2laj1mx" path="res://scripts/vigia_pontuacao.gd" id="p_vigia"]
+
+[node name="Cena11" type="Node2D" unique_id=1007681317]
+script = ExtResource("p_guarda")
+indice = 11
+
+[node name="Chao" type="TileMapLayer" parent="." unique_id=614554976]
+position = Vector2(-124, 448)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAQAAAAAAAAABAAEAAAAAAAAAAAACAAAAAQAAAAAAAAACAAEAAAAAAAAAAAADAAAAAQAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAAAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAAAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAAAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAAAAAAAAAAALAAAAAQAAAAAAAAALAAEAAAAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAAAAAAAAAAANAAAAAQAAAAAAAAANAAEAAAAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAAAAAAAAAAAPAAAAAQAAAAAAAAAPAAEAAAAAAAAAAAAQAAAAAQAAAAAAAAAQAAEAAAAAAAAAAAARAAAAAQAAAAAAAAARAAEAAAAAAAAAAAASAAAAAQAAAAAAAAASAAEAAAAAAAAAAAATAAAAAQAAAAAAAAATAAEAAAAAAAAAAAAUAAAAAQAAAAAAAAAUAAEAAAAAAAAAAAAVAAAAAQAAAAAAAAAVAAEAAAAAAAAAAAAWAAAAAQAAAAAAAAAWAAEAAAAAAAAAAAAXAAAAAQAAAAAAAAAXAAEAAAAAAAAAAAAYAAAAAQAAAAAAAAAYAAEAAAAAAAAAAAAZAAAAAQAAAAAAAAAZAAEAAAAAAAAAAAAaAAAAAQAAAAAAAAAaAAEAAAAAAAAAAAAbAAAAAQAAAAAAAAAbAAEAAAAAAAAAAAAcAAAAAQAAAAAAAAAcAAEAAAAAAAAAAAAdAAAAAQAAAAAAAAAdAAEAAAAAAAAAAAAeAAAAAQAAAAAAAAAeAAEAAAAAAAAAAAAfAAAAAQAAAAAAAAAfAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("p_tileset")
+
+[node name="NuvemA" type="Sprite2D" parent="." unique_id=1816244420]
+z_index = -1
+position = Vector2(300, 140)
+texture = ExtResource("deco_cloudA")
+
+[node name="NuvemB" type="Sprite2D" parent="." unique_id=1387232189]
+z_index = -1
+position = Vector2(1100, 220)
+texture = ExtResource("deco_cloudB")
+
+[node name="Arvore" type="Sprite2D" parent="." unique_id=1936343824]
+z_index = -1
+position = Vector2(60, 384)
+texture = ExtResource("deco_tree")
+
+[node name="ArvorePinheiro" type="Sprite2D" parent="." unique_id=940372415]
+z_index = -1
+position = Vector2(1800, 416)
+texture = ExtResource("deco_pine")
+
+[node name="Player" parent="." unique_id=1179186528 instance=ExtResource("p_player")]
+position = Vector2(140, 340)
+
+[node name="HUDPontuacao" parent="." unique_id=401290445 instance=ExtResource("p_hud_pontos")]
+
+[node name="Moeda1" parent="." unique_id=503659052 instance=ExtResource("p_moeda")]
+position = Vector2(300, 390)
+hud_path = NodePath("../HUDPontuacao")
+
+[node name="Moeda2" parent="." unique_id=516466977 instance=ExtResource("p_moeda")]
+position = Vector2(600, 390)
+hud_path = NodePath("../HUDPontuacao")
+
+[node name="Moeda3" parent="." unique_id=1461094984 instance=ExtResource("p_moeda")]
+position = Vector2(900, 390)
+hud_path = NodePath("../HUDPontuacao")
+
+[node name="Moeda4" parent="." unique_id=1915880015 instance=ExtResource("p_moeda")]
+position = Vector2(1200, 390)
+hud_path = NodePath("../HUDPontuacao")
+
+[node name="Porta" parent="." unique_id=1359884100 instance=ExtResource("p_porta")]
+position = Vector2(1450, 352)
+
+[node name="Fragmento" parent="." unique_id=1412818825 instance=ExtResource("p_frag")]
+position = Vector2(1700, 408)
+indice = 11
+
+[node name="Vigia" type="Node" parent="." unique_id=1487615815]
+script = ExtResource("p_vigia")
+hud_path = NodePath("../HUDPontuacao")
+porta_path = NodePath("../Porta")
+
+[node name="Killzone" parent="." instance=ExtResource("p_kill")]
+position = Vector2(900, 780)
+
+[node name="HUD" parent="." unique_id=1885189649 instance=ExtResource("p_hud")]
+indice = 11

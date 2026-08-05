@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://vqvan5cjapv8"]
+
+[ext_resource type="TileSet" uid="uid://bdm4h4e1j5vtf" path="res://recursos/ground_tileset.tres" id="p_tileset"]
+[ext_resource type="PackedScene" path="res://componentes/fragmento.tscn" id="p_frag"]
+[ext_resource type="Script" uid="uid://bp2mbknh6jmqa" path="res://scripts/guarda.gd" id="p_guarda"]
+[ext_resource type="PackedScene" path="res://componentes/hud.tscn" id="p_hud"]
+[ext_resource type="PackedScene" path="res://componentes/placa.tscn" id="p_placa"]
+[ext_resource type="PackedScene" path="res://componentes/player.tscn" id="p_player"]
+[ext_resource type="PackedScene" path="res://componentes/porta.tscn" id="p_porta"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_treeLarge.png" id="deco_tree"]
+[ext_resource type="Texture2D" path="res://recursos/PNG/Default/tile_tree.png" id="deco_pine"]
+[ext_resource type="PackedScene" path="res://componentes/killzone.tscn" id="p_kill"]
+
+[node name="Cena03" type="Node2D" unique_id=340293657]
+script = ExtResource("p_guarda")
+indice = 3
+
+[node name="Chao" type="TileMapLayer" parent="." unique_id=959046642]
+position = Vector2(-124, 448)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAQAAAAAAAAABAAEAAAAAAAAAAAACAAAAAQAAAAAAAAACAAEAAAAAAAAAAAADAAAAAQAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAAAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAAAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAAAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAAAAAAAAAAALAAAAAQAAAAAAAAALAAEAAAAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAAAAAAAAAAANAAAAAQAAAAAAAAANAAEAAAAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAAAAAAAAAAAPAAAAAQAAAAAAAAAPAAEAAAAAAAAAAAAQAAAAAQAAAAAAAAAQAAEAAAAAAAAAAAARAAAAAQAAAAAAAAARAAEAAAAAAAAAAAASAAAAAQAAAAAAAAASAAEAAAAAAAAAAAATAAAAAQAAAAAAAAATAAEAAAAAAAAAAAAUAAAAAQAAAAAAAAAUAAEAAAAAAAAAAAAVAAAAAQAAAAAAAAAVAAEAAAAAAAAAAAAWAAAAAQAAAAAAAAAWAAEAAAAAAAAAAAAXAAAAAQAAAAAAAAAXAAEAAAAAAAAAAAAYAAAAAQAAAAAAAAAYAAEAAAAAAAAAAAAZAAAAAQAAAAAAAAAZAAEAAAAAAAAAAAAaAAAAAQAAAAAAAAAaAAEAAAAAAAAAAAAbAAAAAQAAAAAAAAAbAAEAAAAAAAAAAAAcAAAAAQAAAAAAAAAcAAEAAAAAAAAAAAAdAAAAAQAAAAAAAAAdAAEAAAAAAAAAAAAeAAAAAQAAAAAAAAAeAAEAAAAAAAAAAAAfAAAAAQAAAAAAAAAfAAEAAAAAAAAAAAA=")
+tile_set = ExtResource("p_tileset")
+
+[node name="NuvemA" type="Sprite2D" parent="."]
+position = Vector2(300, 140)
+z_index = -1
+texture = ExtResource("deco_cloudA")
+
+[node name="NuvemB" type="Sprite2D" parent="."]
+position = Vector2(1100, 220)
+z_index = -1
+texture = ExtResource("deco_cloudB")
+
+[node name="Arvore" type="Sprite2D" parent="."]
+position = Vector2(60, 384)
+z_index = -1
+texture = ExtResource("deco_tree")
+
+[node name="ArvorePinheiro" type="Sprite2D" parent="."]
+position = Vector2(1850, 416)
+z_index = -1
+texture = ExtResource("deco_pine")
+
+[node name="Player" parent="." unique_id=456708392 instance=ExtResource("p_player")]
+position = Vector2(140, 340)
+
+[node name="Placa" parent="." unique_id=1074591368 instance=ExtResource("p_placa")]
+position = Vector2(420, 440)
+alvo = NodePath("../Porta")
+
+[node name="RayCast2D" parent="Placa" index="1"]
+target_position = Vector2(0, 64)
+
+[node name="Porta" parent="." unique_id=678912200 instance=ExtResource("p_porta")]
+position = Vector2(820, 352)
+
+[node name="Fragmento" parent="." unique_id=1275647737 instance=ExtResource("p_frag")]
+position = Vector2(1250, 408)
+indice = 3
+
+[node name="Killzone" parent="." instance=ExtResource("p_kill")]
+position = Vector2(900, 780)
+
+[node name="HUD" parent="." unique_id=2048206300 instance=ExtResource("p_hud")]
+indice = 3
+
+[editable path="Placa"]
