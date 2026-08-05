@@ -57,3 +57,5 @@ position = Vector2(937, 408)
 position = Vector2(900, 780)
 
 [node name="HUD" parent="." unique_id=1813276233 instance=ExtResource("p_hud")]
+
+[connection signal="body_entered" from="Flag" to="Porta" method="abrir"]
