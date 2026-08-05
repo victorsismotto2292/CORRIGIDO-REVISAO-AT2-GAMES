@@ -1,2 +1,3 @@
-# CORRIGIDO-REVISAO-AT2-GAMES
-Projeto dos exercícios de revisão da Avaliação Trimestral do 2ºTrimestre de Games feitos - Cada commit explica como passar de cada fase e o que foi alterado dentro do projeto. Para mais informações, leia o README que explica o desafio de cada fase e como foi resolvido.
+# INSTRUÇÕES DAS FASES
+FASE 1 -> Porta com problema com sinal vindo da bandeira para passar de fase
+SOLUÇÃO: Conectar um sinal body_entered() na bandeira para emitir uma função de "desaparecer" da porta, evitando sua colisão e mudando sua opacidade na fase para 0%
