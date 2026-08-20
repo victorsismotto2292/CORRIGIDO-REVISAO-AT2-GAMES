@@ -10,9 +10,22 @@ SOLUÇÃO: Conectar um sinal body_entered() na bandeira para emitir uma função
 Tilemap incompleto, personagem não consegue avançar pois tem um buraco separando a plataforma de spawn e a porta que contém o fragmento teleportável à próxima fase
 
 SOLUÇÃO: Selecionar o TileMapLayer da cena, ir na aba "TileMap", selecionar os TileMaps correspondentes da plataforma e, com a ferramenta de pintura, preencher os espaços vazios e conectar a plataforma de spawn com a plataforma do pragmento.
-
+#
 # FASE 3
 
 Personagem precisa detectar um objeto ao chão para liberar a passagem de uma porta
 
 SOLUÇÃO: inserir ou ajustar o RayCast2D que detecte objetos colidíveis no chão observável
+#
+# FASE 4
+
+Personagem precisa dar um super-pulo para subir na plataforma e adquirir o fragmento
+
+SOLUÇÃO: adicionar uma tecla com funcionalidade do super-pulo em "PROJETO/CONFIGURAÇÕES DO PROJETO", em seguida, adicionar uma animação de pulo para o personagem (script adicionado pelo professor, obrigado 🙏)
+#
+# FASE 5
+
+Personagem precisa dar um dash e evitar cair no buraco
+
+SOLUÇÃO: Aplicar a habilidade "dash" a uma tecla especifica em "PROJETO/CONFIGURAÇÕES DO PROJETO", em seguida, adicionar um conector ao powerup "body_entered" nele mesmo
+#
