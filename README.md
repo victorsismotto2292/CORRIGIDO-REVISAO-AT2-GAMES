@@ -41,3 +41,9 @@ Fragmento está em cima de uma plataforma que o personagem não consegue alcanç
 
 SOLUÇÃO: com os tilemaps atribuidos, construir uma escada que leva até o fragmento
 #
+# FASE 8
+
+Inimigo precisa andar para ativar a plataforma e liberar a passagem, mas está parado
+
+SOLUÇÃO: No script do inimigo, ajustar o valor da sua velocidade para um número positivo diferente de zero, para que ele possa se locomovver
+#
