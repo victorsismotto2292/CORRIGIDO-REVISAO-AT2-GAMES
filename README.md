@@ -29,3 +29,9 @@ Personagem precisa dar um dash e evitar cair no buraco
 
 SOLUÇÃO: Aplicar a habilidade "dash" a uma tecla especifica em "PROJETO/CONFIGURAÇÕES DO PROJETO", em seguida, adicionar um conector ao powerup "body_entered" nele mesmo
 #
+# FASE 6
+
+Sinal da bandeira está conectado na porta errada
+
+SOLUÇÃO: editar o conector para a porta correta nos sinais da bandeira
+#
