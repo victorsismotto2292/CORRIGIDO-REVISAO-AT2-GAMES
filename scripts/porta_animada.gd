@@ -5,6 +5,9 @@ extends StaticBody2D
 # (algo como "@onready var nome: AnimationPlayer = $AnimationPlayer") e usar
 # o metodo play() dela dentro de acionar(), tocando a animacao "abrir".
 
+@onready var animação: AnimationPlayer = $AnimationPlayer
+
 
 func acionar(_body: Node2D = null) -> void:
 	pass
+	animação.play("abrir")
