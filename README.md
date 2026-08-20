@@ -59,3 +59,9 @@ Ponte quebrada incompleta e personagem não tem colisão com ela
 
 SOLUÇÃO: ajustar CollisionShape2D da primeira ponte e adicionar, dentro do Node2D solicitado pelo professor dentro do projeto, um StaticBody2D, contendo um Sprite2D com a textura da ponte e um CollisionShape2D com um formato retangular, em seguida, ajustar posição e comprimento que conectem à ponte principal
 #
+# FASE 11
+
+Hud não atualiza pontuação quando personagem pega as moedas
+
+SOLUÇÃO: criar uma variável de pontuação dentro do script "HUD_PONTUAÇÃO.GD", em seguida, dentro da função de soma, adicionar um incremento e transformá-lo em string que será exibido no HUD corretamente
+#
