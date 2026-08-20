@@ -1,61 +1,53 @@
-[gd_scene format=4]
+[gd_scene format=4 uid="uid://lwqqmjihakrv"]
 
-[ext_resource type="Script" path="res://scripts/guarda.gd" id="1_n8i5v"]
-[ext_resource type="TileSet" path="res://recursos/ground_tileset.tres" id="2_a6o85"]
-[ext_resource type="PackedScene" path="res://componentes/player.tscn" id="3_dthpa"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="4_n8i5v"]
+[ext_resource type="Script" uid="uid://bp2mbknh6jmqa" path="res://scripts/guarda.gd" id="1_n8i5v"]
+[ext_resource type="TileSet" uid="uid://bdm4h4e1j5vtf" path="res://recursos/ground_tileset.tres" id="2_a6o85"]
+[ext_resource type="PackedScene" uid="uid://do0f7o0dkqfya" path="res://componentes/player.tscn" id="3_dthpa"]
 [ext_resource type="PackedScene" path="res://componentes/fragmento.tscn" id="5_b5gg5"]
-[ext_resource type="Script" path="res://scripts/fragmento.gd" id="6_a6o85"]
 [ext_resource type="PackedScene" path="res://componentes/killzone.tscn" id="7_agtny"]
-[ext_resource type="Script" path="res://scripts/killzone.gd" id="8_dthpa"]
 [ext_resource type="PackedScene" path="res://componentes/hud.tscn" id="9_3e4f6"]
-[ext_resource type="Script" path="res://scripts/hud.gd" id="10_n0okx"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_tree.png" id="deco_tree"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/tile_tree.png" id="deco_pine"]
+[ext_resource type="Texture2D" uid="uid://cteu44qo3peym" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
+[ext_resource type="Texture2D" uid="uid://dx1framtwspdb" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
+[ext_resource type="Texture2D" uid="uid://weaojmtc28h8" path="res://recursos/PNG/Default/tile_tree.png" id="deco_pine"]
+[ext_resource type="Texture2D" uid="uid://b8ennfvngk4dk" path="res://recursos/PNG/Default/background_tree.png" id="deco_tree"]
 
 [node name="Cena02" type="Node2D" unique_id=954078048]
 script = ExtResource("1_n8i5v")
 indice = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1588387723]
-tile_map_data = PackedByteArray("AAAAAAcAAQAAAAAAAAAAAAgAAAAAAAAAAAABAAcAAQAAAAAAAAABAAgAAAAAAAAAAAACAAcAAQAAAAAAAAACAAgAAAAAAAAAAAADAAcAAQAAAAAAAAADAAgAAAAAAAAAAAAEAAcAAQAAAAAAAAAEAAgAAAAAAAAAAAAFAAcAAQAAAAAAAAAFAAgAAAAAAAAAAAAGAAcAAQAAAAAAAAAGAAgAAAAAAAAAAAAHAAcAAQAAAAAAAAAHAAgAAAAAAAAAAAANAAcAAQAAAAAAAAANAAgAAAAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAAAAAAAAAAAPAAcAAQAAAAAAAAAPAAgAAAAAAAAAAAAQAAcAAQAAAAAAAAAQAAgAAAAAAAAAAAARAAcAAQAAAAAAAAARAAgAAAAAAAAAAAASAAcAAQAAAAAAAAASAAgAAAAAAAAAAAATAAcAAQAAAAAAAAATAAgAAAAAAAAAAAAUAAcAAQAAAAAAAAAUAAgAAAAAAAAAAAAVAAcAAQAAAAAAAAAVAAgAAAAAAAAAAAAWAAcAAQAAAAAAAAAWAAgAAAAAAAAAAAAXAAcAAQAAAAAAAAAXAAgAAAAAAAAAAAAYAAcAAQAAAAAAAAAYAAgAAAAAAAAAAAAZAAcAAQAAAAAAAAAZAAgAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcAAQAAAAAAAAAAAAgAAAAAAAAAAAABAAcAAQAAAAAAAAABAAgAAAAAAAAAAAACAAcAAQAAAAAAAAACAAgAAAAAAAAAAAADAAcAAQAAAAAAAAADAAgAAAAAAAAAAAAEAAcAAQAAAAAAAAAEAAgAAAAAAAAAAAAFAAcAAQAAAAAAAAAFAAgAAAAAAAAAAAAGAAcAAQAAAAAAAAAGAAgAAAAAAAAAAAAHAAcAAQAAAAAAAAAHAAgAAAAAAAAAAAANAAcAAQAAAAAAAAANAAgAAAAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAAAAAAAAAAAPAAcAAQAAAAAAAAAPAAgAAAAAAAAAAAAQAAcAAQAAAAAAAAAQAAgAAAAAAAAAAAARAAcAAQAAAAAAAAARAAgAAAAAAAAAAAASAAcAAQAAAAAAAAASAAgAAAAAAAAAAAATAAcAAQAAAAAAAAATAAgAAAAAAAAAAAAUAAcAAQAAAAAAAAAUAAgAAAAAAAAAAAAVAAcAAQAAAAAAAAAVAAgAAAAAAAAAAAAWAAcAAQAAAAAAAAAWAAgAAAAAAAAAAAAXAAcAAQAAAAAAAAAXAAgAAAAAAAAAAAAYAAcAAQAAAAAAAAAYAAgAAAAAAAAAAAAZAAcAAQAAAAAAAAAZAAgAAAAAAAAAAAAIAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAMAAcAAQAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAA=")
 tile_set = ExtResource("2_a6o85")
 
-[node name="NuvemA" type="Sprite2D" parent="."]
-position = Vector2(300, 140)
+[node name="NuvemA" type="Sprite2D" parent="." unique_id=692458850]
 z_index = -1
+position = Vector2(300, 140)
 texture = ExtResource("deco_cloudA")
 
-[node name="NuvemB" type="Sprite2D" parent="."]
-position = Vector2(1100, 220)
+[node name="NuvemB" type="Sprite2D" parent="." unique_id=365090810]
 z_index = -1
+position = Vector2(1100, 220)
 texture = ExtResource("deco_cloudB")
 
-[node name="Arvore" type="Sprite2D" parent="."]
-position = Vector2(60, 384)
+[node name="Arvore" type="Sprite2D" parent="." unique_id=1432250362]
 z_index = -1
+position = Vector2(60, 384)
 texture = ExtResource("deco_tree")
 
-[node name="ArvorePinheiro" type="Sprite2D" parent="."]
-position = Vector2(1550, 416)
+[node name="ArvorePinheiro" type="Sprite2D" parent="." unique_id=429620325]
 z_index = -1
+position = Vector2(1550, 416)
 texture = ExtResource("deco_pine")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1236800843 groups=["player"] instance=ExtResource("3_dthpa")]
+[node name="Player" parent="." unique_id=1236800843 instance=ExtResource("3_dthpa")]
 position = Vector2(140, 340)
-script = ExtResource("4_n8i5v")
 
-[node name="Fragmento" type="Area2D" parent="." unique_id=804365008 instance=ExtResource("5_b5gg5")]
+[node name="Fragmento" parent="." unique_id=804365008 instance=ExtResource("5_b5gg5")]
 position = Vector2(1184, 408)
-script = ExtResource("6_a6o85")
 indice = 2
 
-[node name="Killzone" type="Area2D" parent="." unique_id=1360248944 instance=ExtResource("7_agtny")]
+[node name="Killzone" parent="." unique_id=1360248944 instance=ExtResource("7_agtny")]
 position = Vector2(800, 780)
-script = ExtResource("8_dthpa")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1132128837 instance=ExtResource("9_3e4f6")]
-script = ExtResource("10_n0okx")
+[node name="HUD" parent="." unique_id=1132128837 instance=ExtResource("9_3e4f6")]
 indice = 2
