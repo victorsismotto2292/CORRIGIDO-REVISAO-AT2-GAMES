@@ -10,3 +10,4 @@ res://cenas/cena07.tscn
 res://scripts/inimigo.gd
 res://scripts/porta_animada.gd
 res://cenas/cena10.tscn
+res://scripts/hud_pontuacao.gd

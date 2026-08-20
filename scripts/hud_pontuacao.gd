@@ -4,6 +4,10 @@ extends CanvasLayer
 
 @onready var label_pontos: Label = $MarginContainer/VBox/Pontos
 
+var pontuacao: int = 0
+
 
 func somar_ponto() -> void:
+	pontuacao += 1
+	label_pontos.text = "Pontos: " + str(pontuacao) 
 	pass
