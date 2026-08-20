@@ -16,7 +16,10 @@
 size = Vector2(500, 128)
 
 [sub_resource type="RectangleShape2D" id="ponte_colisor_errado"]
-size = Vector2(16, 8)
+size = Vector2(150, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(347, 22)
 
 [sub_resource type="RectangleShape2D" id="floor_dir"]
 size = Vector2(700, 128)
@@ -67,11 +70,22 @@ region_enabled = true
 region_rect = Rect2(0, 0, 150, 40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PonteQuebrada" unique_id=720987760]
-position = Vector2(50, -15)
+position = Vector2(0, -8.5)
 shape = SubResource("ponte_colisor_errado")
 
 [node name="ConstruaAqui" type="Node2D" parent="." unique_id=29697789]
 position = Vector2(990, 480)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ConstruaAqui" unique_id=409962251]
+
+[node name="Sprite2D" type="Sprite2D" parent="ConstruaAqui/StaticBody2D" unique_id=1925770783]
+position = Vector2(-14.5, 13)
+scale = Vector2(5.515625, 1)
+texture = ExtResource("p_bridge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConstruaAqui/StaticBody2D" unique_id=926276692]
+position = Vector2(-16.5, -8)
+shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Dica" type="Label" parent="ConstruaAqui" unique_id=379736169]
 offset_left = -127.0
