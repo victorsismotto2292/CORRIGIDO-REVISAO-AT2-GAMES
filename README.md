@@ -53,3 +53,9 @@ A bandeira ativa a porta, mas a porta não recebe nenhum sinal de animação
 
 SOLUÇÃO: no script da bandeira, criar uma variável referencial ao AnimationPlayer da porta e usá-la dentro da função acionar(), que emite uma função da animação "abrir", própria à porta animada
 #
+# FASE 10
+
+Ponte quebrada incompleta e personagem não tem colisão com ela
+
+SOLUÇÃO: ajustar CollisionShape2D da primeira ponte e adicionar, dentro do Node2D solicitado pelo professor dentro do projeto, um StaticBody2D, contendo um Sprite2D com a textura da ponte e um CollisionShape2D com um formato retangular, em seguida, ajustar posição e comprimento que conectem à ponte principal
+#
