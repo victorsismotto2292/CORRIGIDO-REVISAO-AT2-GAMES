@@ -4,3 +4,5 @@ res://cenas/cena04.tscn
 res://componentes/player.tscn
 res://componentes/powerup.tscn
 res://scripts/powerup.gd
+res://scripts/porta.gd
+res://cenas/cena06.tscn

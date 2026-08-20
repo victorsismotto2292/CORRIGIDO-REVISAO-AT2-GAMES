@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://dniwx2spe5leg"]
+[gd_scene format=4 uid="uid://dniwx2spe5leg"]
 
-[ext_resource type="PackedScene" path="res://componentes/flag.tscn" id="p_flag"]
-[ext_resource type="TileSet" uid="uid://bdm4h4e1j5vtf" path="res://recursos/ground_tileset.tres" id="p_tileset"]
+[ext_resource type="Texture2D" uid="uid://cteu44qo3peym" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
+[ext_resource type="Texture2D" uid="uid://dx1framtwspdb" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
+[ext_resource type="Texture2D" uid="uid://b8ennfvngk4dk" path="res://recursos/PNG/Default/background_tree.png" id="deco_tree"]
+[ext_resource type="Texture2D" uid="uid://div53livhxx86" path="res://recursos/PNG/Default/background_treeLarge.png" id="deco_treeLarge"]
+[ext_resource type="PackedScene" uid="uid://6cxh64drxh8k" path="res://componentes/flag.tscn" id="p_flag"]
 [ext_resource type="PackedScene" path="res://componentes/fragmento.tscn" id="p_frag"]
 [ext_resource type="Script" uid="uid://bp2mbknh6jmqa" path="res://scripts/guarda.gd" id="p_guarda"]
 [ext_resource type="PackedScene" path="res://componentes/hud.tscn" id="p_hud"]
-[ext_resource type="PackedScene" path="res://componentes/player.tscn" id="p_player"]
-[ext_resource type="PackedScene" path="res://componentes/porta.tscn" id="p_porta"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_tree.png" id="deco_tree"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_treeLarge.png" id="deco_treeLarge"]
 [ext_resource type="PackedScene" path="res://componentes/killzone.tscn" id="p_kill"]
+[ext_resource type="PackedScene" uid="uid://do0f7o0dkqfya" path="res://componentes/player.tscn" id="p_player"]
+[ext_resource type="PackedScene" path="res://componentes/porta.tscn" id="p_porta"]
+[ext_resource type="TileSet" uid="uid://bdm4h4e1j5vtf" path="res://recursos/ground_tileset.tres" id="p_tileset"]
 
 [node name="Cena06" type="Node2D" unique_id=1253886365]
 script = ExtResource("p_guarda")
@@ -22,24 +22,24 @@ position = Vector2(-124, 448)
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAQAAAAAAAAABAAEAAAAAAAAAAAACAAAAAQAAAAAAAAACAAEAAAAAAAAAAAADAAAAAQAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAAAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAAAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAAAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAAAAAAAAAAALAAAAAQAAAAAAAAALAAEAAAAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAAAAAAAAAAANAAAAAQAAAAAAAAANAAEAAAAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAAAAAAAAAAAPAAAAAQAAAAAAAAAPAAEAAAAAAAAAAAAQAAAAAQAAAAAAAAAQAAEAAAAAAAAAAAARAAAAAQAAAAAAAAARAAEAAAAAAAAAAAASAAAAAQAAAAAAAAASAAEAAAAAAAAAAAATAAAAAQAAAAAAAAATAAEAAAAAAAAAAAAUAAAAAQAAAAAAAAAUAAEAAAAAAAAAAAAVAAAAAQAAAAAAAAAVAAEAAAAAAAAAAAAWAAAAAQAAAAAAAAAWAAEAAAAAAAAAAAAXAAAAAQAAAAAAAAAXAAEAAAAAAAAAAAAYAAAAAQAAAAAAAAAYAAEAAAAAAAAAAAAZAAAAAQAAAAAAAAAZAAEAAAAAAAAAAAAaAAAAAQAAAAAAAAAaAAEAAAAAAAAAAAAbAAAAAQAAAAAAAAAbAAEAAAAAAAAAAAAcAAAAAQAAAAAAAAAcAAEAAAAAAAAAAAAdAAAAAQAAAAAAAAAdAAEAAAAAAAAAAAAeAAAAAQAAAAAAAAAeAAEAAAAAAAAAAAAfAAAAAQAAAAAAAAAfAAEAAAAAAAAAAAA=")
 tile_set = ExtResource("p_tileset")
 
-[node name="NuvemA" type="Sprite2D" parent="."]
-position = Vector2(300, 140)
+[node name="NuvemA" type="Sprite2D" parent="." unique_id=380037813]
 z_index = -1
+position = Vector2(300, 140)
 texture = ExtResource("deco_cloudA")
 
-[node name="NuvemB" type="Sprite2D" parent="."]
-position = Vector2(1100, 220)
+[node name="NuvemB" type="Sprite2D" parent="." unique_id=1465619457]
 z_index = -1
+position = Vector2(1100, 220)
 texture = ExtResource("deco_cloudB")
 
-[node name="Arvore" type="Sprite2D" parent="."]
-position = Vector2(60, 384)
+[node name="Arvore" type="Sprite2D" parent="." unique_id=181310115]
 z_index = -1
+position = Vector2(60, 384)
 texture = ExtResource("deco_tree")
 
-[node name="ArvoreGrande" type="Sprite2D" parent="."]
-position = Vector2(1850, 384)
+[node name="ArvoreGrande" type="Sprite2D" parent="." unique_id=528474302]
 z_index = -1
+position = Vector2(1850, 384)
 texture = ExtResource("deco_treeLarge")
 
 [node name="Player" parent="." unique_id=2000562134 instance=ExtResource("p_player")]
@@ -58,10 +58,10 @@ position = Vector2(1500, 352)
 position = Vector2(1250, 408)
 indice = 6
 
-[node name="Killzone" parent="." instance=ExtResource("p_kill")]
+[node name="Killzone" parent="." unique_id=1069474172 instance=ExtResource("p_kill")]
 position = Vector2(900, 780)
 
 [node name="HUD" parent="." unique_id=693181246 instance=ExtResource("p_hud")]
 indice = 6
 
-[connection signal="body_entered" from="Flag" to="PortaExtra" method="abrir"]
+[connection signal="body_entered" from="Flag" to="Porta" method="abrir"]
