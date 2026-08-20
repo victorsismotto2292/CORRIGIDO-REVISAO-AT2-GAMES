@@ -7,3 +7,4 @@ res://scripts/powerup.gd
 res://scripts/porta.gd
 res://cenas/cena06.tscn
 res://cenas/cena07.tscn
+res://scripts/inimigo.gd

@@ -2,7 +2,7 @@ extends CharacterBody2D
 ## Inimigo que deveria patrulhar de um lado para o outro, virando ao
 ## detectar uma parede com RayCast2D.
 
-const SPEED: float = 0.0  # BUG (cena 08): velocidade zerada, o inimigo nao anda.
+const SPEED: float = 100.0  # BUG (cena 08): velocidade zerada, o inimigo nao anda.
 const PULO_NO_INIMIGO: float = -300.0  
 const RESPAWN_TEMPO: float = 1.5 
 
