@@ -35,3 +35,9 @@ Sinal da bandeira está conectado na porta errada
 
 SOLUÇÃO: editar o conector para a porta correta nos sinais da bandeira
 #
+# FASE 7
+
+Fragmento está em cima de uma plataforma que o personagem não consegue alcançar
+
+SOLUÇÃO: com os tilemaps atribuidos, construir uma escada que leva até o fragmento
+#
