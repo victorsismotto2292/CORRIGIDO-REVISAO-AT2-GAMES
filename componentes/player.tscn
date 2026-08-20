@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ovsidareqn6a" path="res://recursos/PNG/Default/character_roundGreen.png" id="1"]
 [ext_resource type="Script" uid="uid://cb63uikky5rx2" path="res://scripts/player.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cwlprcc0girfc" path="res://recursos/PNG/Default/character_roundRed.png" id="3_lilja"]
 
 [sub_resource type="SpriteFrames" id="frames1"]
 animations = [{
@@ -11,6 +12,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lilja")
+}],
+"loop": 1,
+"name": &"pular",
 "speed": 5.0
 }]
 
@@ -22,7 +31,7 @@ script = ExtResource("2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1534877030]
 sprite_frames = SubResource("frames1")
-animation = &"idle"
+animation = &"pular"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1768105027]
 shape = SubResource("r1")

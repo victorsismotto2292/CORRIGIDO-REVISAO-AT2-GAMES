@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Trilha de Revisao"
-run/main_scene="res://cenas/menu.tscn"
+run/main_scene="uid://ccgdb5c4j3r8u"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0.9254902, 0.9254902, 0.9254902, 1)
 config/icon="res://icon.svg"
@@ -50,7 +50,8 @@ jump={
 }
 dash={
 "deadzone": 0.5,
-"events": []
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"location":0,"echo":false,"script":null)
+]
 }
 super_pulo={
 "deadzone": 0.5,

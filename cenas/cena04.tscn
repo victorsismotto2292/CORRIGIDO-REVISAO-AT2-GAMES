@@ -1,15 +1,15 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene format=4 uid="uid://bopdmrg8aex5p"]
 
-[ext_resource type="Script" path="res://scripts/guarda.gd" id="p_guarda"]
-[ext_resource type="TileSet" uid="uid://bdm4h4e1j5vtf" path="res://recursos/ground_tileset.tres" id="p_tileset"]
-[ext_resource type="PackedScene" path="res://componentes/player.tscn" id="p_player"]
+[ext_resource type="Texture2D" uid="uid://cteu44qo3peym" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
+[ext_resource type="Texture2D" uid="uid://dx1framtwspdb" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
+[ext_resource type="Texture2D" uid="uid://weaojmtc28h8" path="res://recursos/PNG/Default/tile_tree.png" id="deco_pine"]
+[ext_resource type="Texture2D" uid="uid://b8ennfvngk4dk" path="res://recursos/PNG/Default/background_tree.png" id="deco_tree"]
 [ext_resource type="PackedScene" path="res://componentes/fragmento.tscn" id="p_frag"]
+[ext_resource type="Script" uid="uid://bp2mbknh6jmqa" path="res://scripts/guarda.gd" id="p_guarda"]
 [ext_resource type="PackedScene" path="res://componentes/hud.tscn" id="p_hud"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudA.png" id="deco_cloudA"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_cloudB.png" id="deco_cloudB"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/background_tree.png" id="deco_tree"]
-[ext_resource type="Texture2D" path="res://recursos/PNG/Default/tile_tree.png" id="deco_pine"]
 [ext_resource type="PackedScene" path="res://componentes/killzone.tscn" id="p_kill"]
+[ext_resource type="PackedScene" uid="uid://do0f7o0dkqfya" path="res://componentes/player.tscn" id="p_player"]
+[ext_resource type="TileSet" uid="uid://bdm4h4e1j5vtf" path="res://recursos/ground_tileset.tres" id="p_tileset"]
 
 [sub_resource type="RectangleShape2D" id="baixo_shape"]
 size = Vector2(700, 128)
@@ -17,63 +17,63 @@ size = Vector2(700, 128)
 [sub_resource type="RectangleShape2D" id="alto_shape"]
 size = Vector2(500, 400)
 
-[node name="Cena04" type="Node2D"]
+[node name="Cena04" type="Node2D" unique_id=1545031452]
 script = ExtResource("p_guarda")
 indice = 4
 
-[node name="ChaoBaixo" type="StaticBody2D" parent="."]
+[node name="ChaoBaixo" type="StaticBody2D" parent="." unique_id=1069686877]
 position = Vector2(350, 512)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoBaixo"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoBaixo" unique_id=1514124176]
 shape = SubResource("baixo_shape")
 
-[node name="ChaoBaixoVisual" type="TileMapLayer" parent="."]
+[node name="ChaoBaixoVisual" type="TileMapLayer" parent="." unique_id=1358956363]
 position = Vector2(0, 448)
-collision_enabled = false
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAQAAAAAAAAABAAEAAAAAAAAAAAACAAAAAQAAAAAAAAACAAEAAAAAAAAAAAADAAAAAQAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAAAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAAAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAAAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAAAAAAAAAAA=")
 tile_set = ExtResource("p_tileset")
+collision_enabled = false
 
-[node name="NuvemA" type="Sprite2D" parent="."]
-position = Vector2(300, 140)
+[node name="NuvemA" type="Sprite2D" parent="." unique_id=919377945]
 z_index = -1
+position = Vector2(300, 140)
 texture = ExtResource("deco_cloudA")
 
-[node name="NuvemB" type="Sprite2D" parent="."]
-position = Vector2(1100, 220)
+[node name="NuvemB" type="Sprite2D" parent="." unique_id=1977481607]
 z_index = -1
+position = Vector2(1100, 220)
 texture = ExtResource("deco_cloudB")
 
-[node name="Arvore" type="Sprite2D" parent="."]
-position = Vector2(60, 384)
+[node name="Arvore" type="Sprite2D" parent="." unique_id=144830162]
 z_index = -1
+position = Vector2(60, 384)
 texture = ExtResource("deco_tree")
 
-[node name="ArvorePinheiro" type="Sprite2D" parent="."]
-position = Vector2(1100, 236)
+[node name="ArvorePinheiro" type="Sprite2D" parent="." unique_id=178310585]
 z_index = -1
+position = Vector2(1100, 236)
 texture = ExtResource("deco_pine")
 
-[node name="ChaoAlto" type="StaticBody2D" parent="."]
+[node name="ChaoAlto" type="StaticBody2D" parent="." unique_id=1843755084]
 position = Vector2(950, 468)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoAlto"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaoAlto" unique_id=782061680]
 shape = SubResource("alto_shape")
 
-[node name="ChaoAltoVisual" type="TileMapLayer" parent="."]
+[node name="ChaoAltoVisual" type="TileMapLayer" parent="." unique_id=2022008024]
 position = Vector2(700, 268)
-collision_enabled = false
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAAAAQAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAACAAAAAQAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAADAAAAAQAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAA=")
 tile_set = ExtResource("p_tileset")
+collision_enabled = false
 
-[node name="Player" parent="." instance=ExtResource("p_player")]
+[node name="Player" parent="." unique_id=24118191 instance=ExtResource("p_player")]
 position = Vector2(300, 340)
 
-[node name="Fragmento" parent="." instance=ExtResource("p_frag")]
+[node name="Fragmento" parent="." unique_id=582435689 instance=ExtResource("p_frag")]
 position = Vector2(950, 240)
 indice = 4
 
-[node name="Killzone" parent="." instance=ExtResource("p_kill")]
+[node name="Killzone" parent="." unique_id=648396377 instance=ExtResource("p_kill")]
 position = Vector2(600, 900)
 
-[node name="HUD" parent="." instance=ExtResource("p_hud")]
+[node name="HUD" parent="." unique_id=399771601 instance=ExtResource("p_hud")]
 indice = 4

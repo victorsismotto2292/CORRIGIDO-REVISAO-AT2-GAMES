@@ -1,2 +1,4 @@
 res://cenas/cena02.tscn
 res://recursos/ground_tileset.tres
+res://cenas/cena04.tscn
+res://componentes/player.tscn
