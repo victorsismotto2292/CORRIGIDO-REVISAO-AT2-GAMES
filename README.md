@@ -45,5 +45,11 @@ SOLUÇÃO: com os tilemaps atribuidos, construir uma escada que leva até o frag
 
 Inimigo precisa andar para ativar a plataforma e liberar a passagem, mas está parado
 
-SOLUÇÃO: No script do inimigo, ajustar o valor da sua velocidade para um número positivo diferente de zero, para que ele possa se locomovver
+SOLUÇÃO: No script do inimigo, ajustar o valor da sua velocidade para um número positivo diferente de zero, para que ele possa se locomover
+#
+# FASE 9
+
+A bandeira ativa a porta, mas a porta não recebe nenhum sinal de animação
+
+SOLUÇÃO: no script da bandeira, criar uma variável referencial ao AnimationPlayer da porta e usá-la dentro da função acionar(), que emite uma função da animação "abrir", própria à porta animada
 #
